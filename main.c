@@ -3,16 +3,19 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char *argv[]) {
-	int i = 100;
-	int *p = &i;
-	int **q = &p;
+char *proverb = "All that glisters is not gold.";
+void setPointer(char **q)
+{
+	*q = proverb;
+}
+
+int main(void) {
 	
-	*p = 200;
-	printf("i = %d, *p = %d, **q = %d\n", i, *p, **q);
+	char *p = "zzz";
+	char **q = &p;
 	
-	**q = 300;
-	printf("i = %d, *p = %d, **q = %d\n", i, *p, **q);
+	setPointer(p);
+	printf("%s\n", p);
 	
 	return 0;
 }
